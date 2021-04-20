@@ -2,7 +2,7 @@ name: "Daily Fudan"
 
 on:
   schedule:
-    - cron: "49 15 * * *"  # scheduled at 06:00 (UTC+8) everyday
+    - cron: "2 16 * * *"  # scheduled at 06:00 (UTC+8) everyday
   workflow_dispatch:
 
 env:
@@ -32,4 +32,7 @@ jobs:
         run: pip install -r ./requirements.txt
 
       - name: Run sign
-        run: python3 ./dailyFudan.py ${{ secrets.FUDAN }}
+        run: 
+         python3 ./dailyFudan.py ${{ secrets.LIANG }}
+         python3 ./dailyFudan.py ${{ secrets.LINX }}
+        
