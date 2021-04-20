@@ -185,21 +185,19 @@ class Zlapp(Fudan):
         save_msg = json_loads(save.text)["m"]
         logging.info(save_msg)
 
-def get_account(index):
+def get_account():
     """
     获取账号信息
     """
-    uid, psw = sys_argv[index].strip().split(' ')
+    uid, psw = sys_argv[1].strip().split(' ')
     return uid, psw
 
 if __name__ == '__main__':
-    for index in range(1,len(sys_argv)):
-        uid, psw = get_account(index)
-        print(uid, psw)
-#         zlapp_login = 'https://uis.fudan.edu.cn/authserver/login?' \
-#                       'service=https://zlapp.fudan.edu.cn/site/ncov/fudanDaily'
-#         daily_fudan = Zlapp(uid, psw, url_login=zlapp_login)
-#         daily_fudan.login()
-#         daily_fudan.check_and_checkin()
-#         daily_fudan.check_and_checkin()
-#     daily_fudan.close()
+    uid, psw = get_account()
+    zlapp_login = 'https://uis.fudan.edu.cn/authserver/login?' \
+                      'service=https://zlapp.fudan.edu.cn/site/ncov/fudanDaily'
+    daily_fudan = Zlapp(uid, psw, url_login=zlapp_login)
+    daily_fudan.login()
+    daily_fudan.check_and_checkin()
+    daily_fudan.check_and_checkin()
+    daily_fudan.close()
