@@ -2,7 +2,7 @@ name: "Daily Fudan"
 
 on:
   schedule:
-    - cron: "15 15 * * *"  # scheduled at 06:00 (UTC+8) everyday
+    - cron: "21 15 * * *"  # scheduled at 06:00 (UTC+8) everyday
   workflow_dispatch:
 
 env:
@@ -19,10 +19,6 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          ref: master
-
 
       - name: Set up python
         uses: actions/setup-python@v2
