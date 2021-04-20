@@ -195,11 +195,10 @@ def get_account(index):
 if __name__ == '__main__':
     for index in range(1,len(sys_argv)):
         uid, psw = get_account(index)
-        print(uid, psw)
-#         zlapp_login = 'https://uis.fudan.edu.cn/authserver/login?' \
-#                       'service=https://zlapp.fudan.edu.cn/site/ncov/fudanDaily'
-#         daily_fudan = Zlapp(uid, psw, url_login=zlapp_login)
-#         daily_fudan.login()
-#         daily_fudan.check_and_checkin()
-#         daily_fudan.check_and_checkin()
-#     daily_fudan.close()
+        zlapp_login = 'https://uis.fudan.edu.cn/authserver/login?' \
+                      'service=https://zlapp.fudan.edu.cn/site/ncov/fudanDaily'
+        daily_fudan = Zlapp(uid, psw, url_login=zlapp_login)
+        daily_fudan.login()
+        daily_fudan.check_and_checkin()
+        daily_fudan.check_and_checkin()
+    daily_fudan.close()
