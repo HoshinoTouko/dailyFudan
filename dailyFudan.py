@@ -143,9 +143,11 @@ class Zlapp(Fudan):
 
         if last_info["d"]["info"]["date"] == today:
             logging.info("今日已提交")
+            self.close()
         else:
             logging.info("未提交")
             self.last_info = last_info["d"]["info"]
+            self.checkin()
 
     def checkin(self):
         """
