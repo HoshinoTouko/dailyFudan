@@ -147,7 +147,7 @@ class Zlapp(Fudan):
         else:
             logging.info("未提交")
             self.last_info = last_info["d"]["info"]
-            slef.checkin()
+            self.checkin()
 
     def checkin(self):
         """
