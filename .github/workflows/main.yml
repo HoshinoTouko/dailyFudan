@@ -25,4 +25,4 @@ jobs:
         run: |
          python3 ./dailyFudan.py '${{ secrets.LIANG }}'
          python3 ./dailyFudan.py '${{ secrets.LINX }}'
-        
+         python3 ./dailyFudan.py '${{ secrets.ZZG }}'
