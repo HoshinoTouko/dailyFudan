@@ -1,8 +1,11 @@
 name: "Daily Fudan"
 
+env:
+  TZ: Asia/Shanghai
+
 on:
   schedule:
-    - cron: '12 04 * * *'
+    - cron: '30 15 * * *'
   workflow_dispatch:
 
 jobs:
